@@ -1,95 +1,66 @@
-<!doctype html>
-<html lang="th">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ขมรมกรีฑา — บทเรียน HTML สัปดาห์ที่ 1</title>
-  </head>
-  <body>
-    <header>
-      <h1>ขมรมกรีฑา</h1>
-      <nav aria-label="เมนูหลัก">
-        <a href="#New Series ">ข่าวกรีฑา</a>
-        <a href="#MangaNews">ข่าวชมรม</a>
-        <a href="#Newsmama">รับสมัคร</a>
-    
-      </nav>
-    </header>
-
-    <main>
-      <section aria-labelledby="welcome-title">
-        <h2 id="welcome-title">คำอธิบายชมรมกรีฑา</h2>
-        <p>ชมรมนี้จัดทำสำหรับคนรักกรีฑา และข่าวสารนักวาดนักเขียนกรีฑา</p>
-      </section>
-
-      <section id="NewSeries " aria-labelledby="NewSeries-title">
-        <h2 id="NewSeries-title">ข่าวกรีฑา</h2>
-        <article aria-labelledby="notebook-title">
-          <h3 id="notebook-title">เรื่อง การแข่ง มาราธอน</h3>
-          <p>เรื่องย่อ นาย กากวิ่ง 3 โล ได้ที่1</p>
-          <p>ราคา <data value="129">300 บาท </data></p>
-          <button type="button" disabled>เพิ่มลงตะกร้า — จะทำงานในบทเรียนภายหลัง</button>
-        </article>
-      </section>
-
-      <section id="MangaNews" aria-labelledby="MangaNews-title">
-        <h2 id="MangaNews-title">ข่าวสารกรีฑา</h2>
-        <p>ไม่มีข่าวสารใหม่</p>
-      </section>
-
-      <section id="Newsmama" aria-labelledby="Newsmama-title">
-        <h2 id="Newsmama-title">รับสมัคร</h2>
-        <article aria-labelledby="notebook-title">
-          <h3 id="notebook-title">ต้องการคนเข้าชมรม</h3>
-          <p>3 คนแรกที่สมัครเข้าชมรมจะได้รับของรางวัลพิเศษ
-          </p>
-          <button type="button" disabled>เพิ่มลงตะกร้า — จะทำงานในบทเรียนภายหลัง</button>
-        </article>
-      </section>
-
-    </main>
-
-    <footer>
-      <p>ตัวอย่างสำหรับฝึกอ่านโครงสร้างเอกสารและ DOM</p>
-    </footer>
-  </body>
-</html>
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>รายการสินค้า</title>
+
+  <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
 
-  <h1>รายการสินค้า</h1>
+  <header>
+    <nav>
+      <a href="/week2/index.html">สินค้า</a>
+      <a href="/week2/cart.html">ตะกร้าตัวอย่าง</a>
+    </nav>
+  </header>
 
-  <form action="/week2/index.html" method="GET">
-    <div>
-      <label for="productId">สินค้าที่สนใจ</label>
-      <select id="productId" name="productId" required>
-        <option value="">เลือกสินค้า</option>
-        <option value="notebook">Notebook</option>
-        <option value="mouse">Mouse</option>
-        <option value="keyboard">Keyboard</option>
-      </select>
-    </div>
+  <main>
+    <h1>รายการสินค้า</h1>
 
-    <div>
-      <label for="quantity">จำนวนที่สนใจ</label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        required
-      >
-    </div>
+    <section id="catalog">
+      <article>
+        <h2>Notebook</h2>
+        <p>สินค้า Notebook</p>
+      </article>
 
-    <button type="submit">ทดลองส่งข้อมูล</button>
-  </form>
+      <article>
+        <h2>Pen</h2>
+        <p>สินค้า Pen</p>
+      </article>
+
+    </section>
+
+    <form class="interest-form" action="/week2/index.html" method="GET">
+      <div class="field">
+        <label for="productId">สินค้าที่สนใจ</label>
+        <select id="productId" name="productId" required>
+          <option value="">เลือกสินค้า</option>
+          <option value="notebook">Notebook</option>
+          <option value="pen">Pen</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="quantity">จำนวนที่สนใจ</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          required
+        >
+      </div>
+
+      <button type="submit">ทดลองส่งข้อมูล</button>
+      <button type="reset">คืนค่าเริ่มต้น</button>
+    </form>
+
+    <a class="restart-link" href="/week2/index.html">เริ่มตัวอย่างใหม่</a>
+  </main>
 
 </body>
-</html>
+</html> 
